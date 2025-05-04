@@ -1,0 +1,15 @@
+2025-04-11 19:38:31,112 - __main__ - INFO - Created new empty DataFrame
+2025-04-11 19:38:31,115 - werkzeug - WARNING -  * Debugger is active!
+2025-04-11 19:38:31,115 - werkzeug - INFO -  * Debugger PIN: 721-876-404
+2025-04-11 19:38:39,597 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 19:38:39] "GET / HTTP/1.1" 200 -
+2025-04-11 19:38:41,144 - __main__ - ERROR - Error in scraper route: Message: Chromedriver not found. Please install chromedriver.
+
+2025-04-11 19:38:41,144 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 19:38:41] "POST /start-scraper HTTP/1.1" 200 -
+2025-04-11 19:38:45,748 - __main__ - INFO - Created new empty DataFrame
+2025-04-11 19:38:45,751 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 19:38:45] "GET /view-data HTTP/1.1" 200 -
+2025-04-11 19:38:47,960 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 19:38:47] "GET / HTTP/1.1" 200 -
+2025-04-11 19:38:49,082 - __main__ - INFO - Created new empty DataFrame
+2025-04-11 19:38:49,084 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 19:38:49] "GET /predict HTTP/1.1" 200 -
+2025-04-11 19:38:59,434 - __main__ - WARNING - Model not trained - using fallback prediction
+2025-04-11 19:38:59,434 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2025 19:38:59] "POST /predict HTTP/1.1" 200 -
+2025-04-11 19:40:00,916 - werkzeug - INFO -  * Detected change in '/home/ysk/Desktop/software develeopment all(1)/software develeopment all/car/arabamflask.py', reloading
