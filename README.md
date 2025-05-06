@@ -1,126 +1,143 @@
 
-# 🚗 Car Scraper
 
-### Overview
+# 🚗 Car Ads Scraper & Price Predictor 🎯
 
-The **Car Ads Scraper** is a Python-based web scraper built using Selenium and Flask. It collects car advertisement data from [arabam.com](https://www.arabam.com) and stores the results in a CSV file. Users can trigger scraping tasks and view collected data through a user-friendly web interface.
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/flask-2.0%2B-lightgrey)](https://flask.palletsprojects.com/)
+[![Selenium](https://img.shields.io/badge/selenium-4.0%2B-orange)](https://www.selenium.dev/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
+![Main Dashboard](https://github.com/user-attachments/assets/bdaa9514-0d21-437a-8f56-cdee202d5c80)
 
-
-## Table of Contents
-1. [Features](#features)  
-2. [Technologies Used](#technologies-used)  
-3. [System Requirements](#system-requirements)  
-4. [Installation](#installation)  
-5. [Usage Instructions](#usage-instructions)  
-6. [Project Structure](#project-structure)  
-7. [Troubleshooting](#troubleshooting)  
-8. [License](#license)  
+A powerful web scraping and machine learning platform that collects car listings from [arabam.com](https://www.arabam.com), processes them into structured datasets, and predicts vehicle prices using an XGBoost model — all through a responsive web interface.
 
 ---
 
-## Features
-- Scrape car ads, including key details like price, location, and specifications.
-- Save data to a CSV file for further analysis.
-- Web interface to manage scraping and view collected data.
-- Supports multiple pages and handles dynamic content.
+## ✨ Features
+
+### 🚙 Web Scraping
+
+* **Rich Data Extraction**: Captures over 25 attributes per car listing.
+* **Headless & Resilient**: Operates in headless mode with randomized user agents to avoid detection.
+* **Robust Error Handling**: Implements retry logic and fallbacks for failed scrapes.
+* **Duplicate Prevention**: Skips previously collected entries using unique hash matching.
+* **Targeted Scraping**: Supports single-listing scraping for specific URLs.
+
+### 📈 Price Prediction
+
+* **Machine Learning Model**: Trained XGBoost model delivers accurate price predictions.
+* **Advanced Feature Engineering**: Considers mileage, brand, condition, model year, and more.
+* **Price Tiering**: Classifies listings into budget, mid-range, and premium tiers.
+* **Brand & Condition Adjustment**: Fine-tunes prices based on specific makes or conditions.
+
+![Prediction Interface](https://github.com/user-attachments/assets/96c0fcf9-fe29-4194-917d-64e0eafc1ba3)
+![Data Table Screenshot](https://github.com/user-attachments/assets/b869d4db-e1ba-4c12-b4e9-971186858c9f)
+
+### 🖥 Web Interface
+
+* **Dashboard**: Monitor scraping tasks, memory usage, and uptime.
+* **Data Viewer**: Search, filter, and sort collected listings.
+* **Live Predictions**: Enter vehicle details and get instant price predictions.
+* **Responsive Design**: Fully usable on both mobile and desktop browsers.
 
 ---
 
-## Technologies Used
-- **Python 3.8+**
-- **Selenium** for web scraping.
-- **Flask** for the web interface.
-- **Pandas** for data manipulation.
-- **Bootstrap** for front-end styling.
+## 🛠 Technologies Used
+
+| Layer               | Tools & Libraries                                   |
+| ------------------- | --------------------------------------------------- |
+| **Backend**         | Python 3.8+, Flask, Selenium, BeautifulSoup         |
+| **Data Processing** | Pandas, NumPy, scikit-learn, joblib                 |
+| **ML Model**        | XGBoost (regression), custom preprocessing pipeline |
+| **Frontend**        | HTML5, Bootstrap 5,              |
+| **Automation**      | ChromeDriver / GeckoDriver (Firefox), Headless mode |
+| **Deployment**      | Docker, *(optional for production)* |
 
 ---
 
-## System Requirements
-### Hardware
-- **CPU**: 2 GHz dual-core or better  
-- **RAM**: 4 GB (8 GB recommended)  
-- **Storage**: 100 MB free space  
+## 📋 System Requirements
 
-### Software
-- **Operating System**: Windows, macOS, or Linux  
-- **Python**: Version 3.8 or higher  
-- **Firefox**: Installed with matching `geckodriver`
+### 💻 Software
+
+* **Python**: 3.8+
+* **Browser**: Chrome or Firefox (latest)
+* **WebDriver**: `chromedriver` or `geckodriver` (must match browser version)
+* **Optional**: Docker, Git, virtual environment (venv/conda)
 
 ---
 
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/car-ads-scraper.git
-   cd car-ads-scraper
-   ```
+## 🚀 Installation
 
-2. Set up a virtual environment:
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows: venv\\Scripts\\activate
-   ```
+### 1. Clone the Repository
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. Install Firefox and Geckodriver:
-   - [Download Firefox](https://www.mozilla.org/firefox/)
-   - [Download Geckodriver](https://github.com/mozilla/geckodriver/releases)
-   - Ensure the `geckodriver` binary is in your PATH or specify its location in the script.
-
-5. Start the Flask app:
-   ```bash
-   python app.py
-   ```
-
-6. Access the web interface at [http://127.0.0.1:5000](http://127.0.0.1:5000).
-
----
-
-## Usage Instructions
-### Web Interface
-1. Navigate to the home page.
-2. Click **Start Scraper** to begin scraping car ads.
-3. After scraping, click **View Collected Data** to see the data in a table format.
-
-### Data Storage
-- Collected data is saved to `scraped_data/scraped_ads.csv`.
-
----
-
-## Project Structure
-```
-car-ads-scraper/
-│
-├── arabamflask.py                # Main Flask application
-├── scraped_data/         # Folder to store CSV data
-├── templates/            # HTML templates for Flask
-│   ├── index.html        # Home page
-│   └── view_data.html    # Data display page
-├── requirements.txt      # Python dependencies
-└── README.md             # Project documentation
+```bash
+git clone https://github.com/yourusername/car-ads-scraper.git
+cd car-ads-scraper
 ```
 
+### 2. Set Up a Virtual Environment
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+```
+
+### 3. Install Python Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Install Browser & WebDriver
+
+* [Download Chrome](https://www.google.com/chrome/) or [Firefox](https://www.mozilla.org/firefox/)
+* [Download matching WebDriver](https://chromedriver.chromium.org/downloads) or [Geckodriver](https://github.com/mozilla/geckodriver/releases)
+* Add the driver to your system PATH or specify its path in the code.
+
+### 5. Run the Flask Application
+
+```bash
+python app.py
+```
+
+### 6. Open the Web Interface
+
+Visit: [http://127.0.0.1:5000](http://127.0.0.1:5000)
+
 ---
 
-## Troubleshooting
+---
+
+## 🧩 Troubleshooting
+
 ### Common Issues
-1. **"Unable to locate Geckodriver"**:
-   - Ensure `geckodriver` is installed and in your PATH.
-   - Update the `executable_path` in the script if necessary.
 
-2. **Scraping is slow**:
-   - The scraper intentionally includes delays to avoid getting blocked by the website.
+* **WebDriver not found**:
+  Ensure `chromedriver` or `geckodriver` is installed and correctly added to your system's `PATH`.
 
-3. **Data not displayed in the web interface**:
-   - Ensure scraping is completed, and check if `scraped_data/scraped_ads.csv` contains data.
+* **Blank data page**:
+  Make sure scraping has completed and `scraped_ads.csv` exists with data.
 
-### Debugging
-- Run the scraper directly to view browser actions:
-   ```python
-   python arabamflask.py
-   ```
+* **Scraping too slow**:
+  Headless browsers introduce delays to avoid bans. You can reduce delays in the code cautiously.
+
+---
+
+## 🤝 Contribution
+
+Contributions and feature requests are welcome!
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes
+4. Push to your fork
+5. Create a pull request
+
+---
+
+## 📄 License
+
+Licensed under the [MIT License](LICENSE).
+
+---
+
