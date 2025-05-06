@@ -19,9 +19,14 @@ import pickle
 import os
 import joblib
 import traceback
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 # Add this near the top of your file with other imports
-MODEL_PATH = os.path.join(os.path.dirname(__file__), '/home/ysk/Desktop/software-develeopment-all-1--main/xgboost_classifier.joblib')
+MODEL_PATH = os.path.join(os.path.dirname(__file__), '/Users/ysk/Downloads/software-develeopment-all-1--main 2/xgboost_classifier.joblib')
 
 # Load the model (add this in your initialization section)
 try:
@@ -113,7 +118,7 @@ def get_geckodriver_path():
         ]
     elif system == "Darwin":  # macOS
         possible_paths = [
-            "/usr/local/bin/geckodriver",
+            "/Users/ysk/Downloads/chrome-mac-arm64 ",
             os.path.expanduser("~/bin/geckodriver"),
             os.path.expanduser("~/.local/bin/geckodriver")
         ]
@@ -133,7 +138,7 @@ def get_chromedriver_path():
     system = platform.system()
     if system == "Darwin":  # macOS
         possible_paths = [
-            "/Applications/chromedriver",
+            "/Users/ysk/Downloads/chrome-mac-arm64 ",
             "/opt/homebrew/bin/chromedriver",
             "/usr/local/bin/chromedriver",
             "/usr/bin/chromedriver",
@@ -679,8 +684,8 @@ def scrape_single_car(url):
             
         try:
             # Set page load timeout (increased for better reliability)
-            driver.set_page_load_timeout(45)
-            driver.set_script_timeout(45)
+            driver.set_page_load_timeout(90)
+            driver.set_script_timeout(90)
             
             # Navigate to URL with retry mechanism and timeout handling
             page_load_retries = 3
