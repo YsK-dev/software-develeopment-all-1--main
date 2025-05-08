@@ -26,7 +26,7 @@ from selenium.webdriver.chrome.service import Service
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 # Add this near the top of your file with other imports
-MODEL_PATH = os.path.join(os.path.dirname(__file__), '/Users/ysk/Downloads/software-develeopment-all-1--main 2/xgboost_classifier.joblib')
+MODEL_PATH = os.path.join(os.path.dirname(__file__), '/Users/ysk/Downloads/software-develeopment-all-1--main 2/software develeopment all/car/xgboost_classifier.joblib')
 
 # Load the model (add this in your initialization section)
 try:
